@@ -30,8 +30,7 @@ header {position: fixed; top: 0; left: 0; z-index: 999; display: none; width: 10
 
 /* -------------------------------------- main css start ------------------------------------- */
 
-main {padding-top: 200px; overflow: hidden;}
-main {padding-top: 200px;}
+main {padding-top: 150px; overflow: hidden;}
 main #sec1 {border: 1px solid blue;}
 main #sec1 .inner .section_tit {font-size: 50px; }
 main #sec1 .inner .tab_list {margin-top: 100px; display: flex; justify-content: center;}
@@ -40,7 +39,7 @@ main #sec1 .inner .tab_list li a {padding: 10px 20px; display: block; color: #c7
 main #sec1 .inner .tab_list li a.tabAct {color: #000;}
 
 main #sec1 .summary_inner {position: relative; margin-top: 50px;}
-main #sec1 .summary_inner .scroll_wrap {position: relative;}
+main #sec1 .summary_inner .scroll_wrap {position: relative; margin-top: 50px;}
 main #sec1 .summary_inner .scroll_wrap .hiding_txt {position: absolute; top: 100px; left: 50%; transform: translateX(-50%); font-size: 36px; color: #000; opacity: 0; transition: top .66s, translateX .66s, opacity .66s ;}
 main #sec1 .summary_inner.onAct .scroll_wrap .hiding_txt {top: 0; opacity: 1;}
 

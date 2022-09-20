@@ -1,20 +1,23 @@
 $(document).ready(function(){
+  var _innerH = parseInt($(".tab_wrap").innerHeight());
+  console.log(_innerH);
   gsap.to(".tab_list", {
     scrollTrigger: {
       trigger: ".tab_list",
       start: "top top",
       endTrigger: "scroll_wrap",
-      end: "bottom+=1000% bottom",
+      end: "bottom+=1000%" + _innerH + " bottom",
       pin: true,
       pinSpacing: false,
       // markers: true,
     }
   })
+  
   gsap.to(".scroll_wrap", {
     scrollTrigger: {
       trigger: ".scroll_wrap",
       start: "top-=150px top",
-      end: "bottom+=1000% bottom",
+      end: "bottom+=1000%" + _innerH + " bottom",
       pin: true,
       // scrub: true,
       markers: true,
