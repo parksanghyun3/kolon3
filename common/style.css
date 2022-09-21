@@ -6,18 +6,21 @@ ul {list-style: none;}
 .inner {position: relative; margin: 0 auto; width: 1200px;}
 .only_pc {display: block;}
 .only_mob {display: none;}
-.section_title {font-size: 50px; font-weight: 700; letter-spacing: -.08em; word-break: keep-all;}
+.section_sub_title {font-size: 36px; text-align: center; color: #000;}
 .letter_specing {letter-spacing: -.08em;}
 .bold {font-weight: 700;}
 
-@media screen and (max-width: 1280px) {
-  .inner {margin: 0 auto; width: calc(100% - 30px);}
+/* @media screen and (max-width: 1280px){
+  .inner {margin: 0 auto; width: calc(100% - 60px);}
+} */
+@media screen and (max-width: 1240px) {
+  .inner {margin: 0 auto; width: calc(100% - 60px);}
 }
-@media screen and (max-width: 768px) {
-  .inner {margin: 0 auto; width: calc(100% - 30px);}
+@media screen and (max-width: 1024px) {
+  .inner {margin: 0 auto; width: calc(100% - 60px);}
   .only_pc {display: none;}
   .only_mob {display: block;}
-  .section_title {font-size: 28px;}
+  .section_sub_title {font-size: 22px; text-align: left;}
 }
 
 /* -------------------------------------- common css end ------------------------------------- */
@@ -31,19 +34,31 @@ header {position: fixed; top: 0; left: 0; z-index: 999; display: none; width: 10
 /* -------------------------------------- main css start ------------------------------------- */
 
 main {padding-top: 150px; overflow: hidden;}
-main #sec1 {border: 1px solid blue;}
-main #sec1 .inner .section_tit {font-size: 50px; }
+main #sec1 .inner .section_tit {font-size: 50px;}
 main #sec1 .inner .tab_list {margin-top: 100px; display: flex; justify-content: center;}
-/* main #sec1 .inner .tab_list li {} */
 main #sec1 .inner .tab_list li a {padding: 10px 20px; display: block; color: #c7c7c7; font-weight: 700;}
 main #sec1 .inner .tab_list li a.tabAct {color: #000;}
 
+@media screen and (max-width: 1024px) {
+  main {padding-top: 50px; overflow: hidden;}
+  main #sec1 .inner .section_tit {font-size: 28px; }
+  main #sec1 .inner .tab_list {margin-top: 50px; display: flex; justify-content: flex-start;}
+  main #sec1 .inner .tab_list li:nth-child(1) a {padding: 10px 0 10px 0;}
+  main #sec1 .inner .tab_list li a {padding: 10px 0px 10px 15px;}
+}
+
 main #sec1 .summary_inner {position: relative; margin-top: 50px;}
-main #sec1 .summary_inner .scroll_wrap {position: relative; margin-top: 50px;}
-main #sec1 .summary_inner .scroll_wrap .hiding_txt {position: absolute; top: 100px; left: 50%; transform: translateX(-50%); font-size: 36px; color: #000; opacity: 0; transition: top .66s, translateX .66s, opacity .66s ;}
+main #sec1 .summary_inner .scroll_wrap {position: relative; margin: 50px 0 160px 0;}
+main #sec1 .summary_inner .scroll_wrap .hiding_txt {position: relative; top: 100px; opacity: 0; transition: top .66s, opacity .66s;}
 main #sec1 .summary_inner.onAct .scroll_wrap .hiding_txt {top: 0; opacity: 1;}
 
-main #sec1 .summary_inner .scroll_wrap .intro_wrap {position: relative; left: calc( -1 * (100vw - 1200px)/2); margin: 0 auto; display: flex; flex-wrap: wrap; width: 100vw; height: 640px; transition: all .66s}
+@media screen and (max-width: 1024px) {
+  main #sec1 .summary_inner .scroll_wrap {margin: 20px 0 80px 0;}
+  main #sec1 .summary_inner .scroll_wrap .hiding_txt {position: relative; top: 0; opacity: 1;}
+  main #sec1 .summary_inner.onAct .scroll_wrap .hiding_txt {top: 0; opacity: 1;}
+}
+
+main #sec1 .summary_inner .scroll_wrap .intro_wrap {position: relative; top: 50%; left: calc( -1 * (100vw - 1200px)/2); transform: translateY(-50%); display: flex; flex-wrap: wrap; width: 100vw; height: 640px; transition: all .66s}
 main #sec1 .summary_inner.onAct .scroll_wrap .intro_wrap {left: 0; width: 1200px;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con {position: relative; overflow: hidden; width: 100%; height: 100%; opacity: 0;}
 main #sec1 .summary_inner.onAct .scroll_wrap .intro_wrap .intro_con {margin-top: 150px; width: 360px; height: 460px; text-align: center; border-radius: 16px; transition: all .66s;}
@@ -62,15 +77,97 @@ main #sec1 .summary_inner.motionThr .intro_wrap .intro_con:nth-child(2) {left: c
 main #sec1 .summary_inner.motionThr .intro_wrap .intro_con:nth-child(3) {left: calc(0%); transition: all .66s;}
 
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .txt_wrap {display: flex; justify-content: center; align-items: center; height: 100%; transition: all .66s;}
-main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt {margin-top: 100px; transition: all .66s;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt {margin-top: 80px; transition: all .66s;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con::before {content: ""; position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; background-color: transparent; transition: all .66s;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt2::before {background-color: rgba(0, 0, 0, .3);}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .slogan_txt {position: absolute; top: calc(50% + 100px); left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 50px; opacity: 0;; transition: all .66s;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt .slogan_txt {top: 50%; opacity: 1;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt2 .slogan_txt {top: 10%; font-size: 20px; opacity: 1;}
-main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt {color: #fff; font-size: 30px; opacity: 0; visibility: hidden; transform: translateY(100px); transition: all .66s;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt {margin-top: 100px; color: #fff; font-size: 30px; text-align: center; opacity: 0; visibility: hidden; transform: translateY(100px); transition: all .66s;}
 main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con.onTxt2 .info_txt {opacity: 1; transform: translateY(0); visibility: visible;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box {margin-top: 20px;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box:first-child {margin-top: 0;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box .title {font-size: 34px; color: #fff;}
+main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box .en_title {font-size: 20px; color: #fff;}
+
+@media screen and (max-width: 1240px) {
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap {left: 0; width: 100%;}
+  main #sec1 .summary_inner.onAct .scroll_wrap .intro_wrap {left: 0; width: 100%;}
+  main #sec1 .summary_inner.onAct .scroll_wrap .intro_wrap .intro_con {width: calc(33.33% - 42px);}
+}
+
+@media screen and (max-width: 1024px) {
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap {top: 0; left: 0; transform: translateY(0); margin: 20px auto 0 auto; display: flex; flex-wrap: wrap; width: 100%; height: auto;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con {width: 100%; height: 440px; border-radius: 14px; opacity: 1;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con {margin-top: 15px;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con:nth-child(1) {margin-top: 0; background: url("../images/img-sustainability-vision-bg-01-mo.jpg") no-repeat; background-size: cover; background-position: center;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con:nth-child(2) {left: 0; background: url("../images/img-sustainability-vision-bg-02.jpg") no-repeat; background-size: cover; background-position: center; transition: all .66s;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con:nth-child(3) {left: 0; background: url("../images/img-sustainability-vision-bg-03.jpg") no-repeat; background-size: cover; background-position: center;}
+
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con::before {background-color: rgba(0, 0, 0, .1);}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .txt_wrap { display: flex; justify-content: center; align-items: center;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .slogan_txt {top: 5%; left: 50%; transform: translate(-50%, 0); font-size: 16px; opacity: 1;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt {margin-top: 0; transform: translateY(0); font-size: 24px; opacity: 1; visibility: visible;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box .title {font-size: 24px; color: #fff;}
+  main #sec1 .summary_inner .scroll_wrap .intro_wrap .intro_con .info_txt .info_box .en_title {font-size: 20px; color: #fff;}
+}
 
 
+main #sec1 .social_programs {position: relative; top: 100px; opacity: 0;}
+main #sec1 .social_programs.onMotion {top: 0; opacity: 1; transition: top 1s, opacity 1s;}
+main #sec1 .social_programs .inner .social_wrap {display: flex; justify-content: center; flex-wrap: wrap; margin-top: 80px;}
+main #sec1 .social_programs .inner .social_wrap .con_list {position: relative; top: 100px; width: calc(50% - 15px) ; height: 380px; border: 2px solid #f7f7f7; border-radius: 14px; overflow: hidden; opacity: 0;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list {top: 0; opacity: 1; transition: top 1s, opacity 1s;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list:nth-child(1) {transition-delay: .1s;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list:nth-child(2) {transition-delay: .2s;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list:nth-child(3) {transition-delay: .3s;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list:nth-child(4) {transition-delay: .4s;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(2n) {margin-left: 30px;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(n + 3) {margin-top: 30px;}
+main #sec1 .social_programs .inner .social_wrap .con_list .motion_bg {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list .motion_bg {width: 0; transition: width 1s; transition-delay: 1s;}
+main #sec1 .social_programs .inner .social_wrap .con_list .motion_bg .motion_txt {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  font-size: 20px; letter-spacing: 15px; color: #fff;}
+main #sec1 .social_programs.onMotion .inner .social_wrap .con_list .motion_bg .motion_txt {opacity: 0; transition: opacity .1; transition-delay: 2s;}
+main #sec1 .social_programs .inner .social_wrap .con_list .motion_bg .motion_img {width: 100%; height: 100%;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(1) .motion_bg .motion_img {width: 100%; height: 100%; background: url("../images/img-sustainability-program-bg-01.jpg") no-repeat; background-position: center; background-size: cover;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(2) .motion_bg .motion_img {width: 100%; height: 100%; background: url("../images/img-sustainability-program-bg-02.jpg") no-repeat; background-position: center; background-size: cover;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(3) .motion_bg .motion_img {width: 100%; height: 100%; background: url("../images/img-sustainability-program-bg-03.jpg") no-repeat; background-position: center; background-size: cover;}
+main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(4) .motion_bg .motion_img {width: 100%; height: 100%; background: url("../images/img-sustainability-program-bg-04.jpg") no-repeat; background-position: center; background-size: cover;}
+main #sec1 .social_programs .inner .social_wrap .con_list .motion_bg .motion_img::before {content: ""; position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .3);}
 
-main .social_programs {border: 1px solid red; height: 100vh;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content {position: absolute; padding: 40px; width: 100%; height: 100%; text-align: center;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .title {font-size: 34px;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .sub_title {margin-top: 10px; font-size: 18px;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con {display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con a {display: inline-block; margin: 10px 10px 0 0; padding: 5px 35px 5px 20px; color: #666; border: 1px solid #ddd; border-radius: 30px; background: url("../images/icon-inner-link-txt-arrow-small.svg") no-repeat; background-position: right 10px center; background-size: 12px 12px; transition: color .66s, background .66s;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con a:hover {color: #000; background: url("../images/icon-inner-link-txt-arrow-small-black.svg") no-repeat; background-position: right 10px center; background-size: 12px 12px; transition: color .66s, background .66s;}
+main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con a:last-child {margin: 10px 0 0 0;}
+
+main #sec1 .social_programs .inner .social_wrap .con_list .img_wrap {position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; justify-content: center;}
+main #sec1 .social_programs .inner .social_wrap .con_list .img_wrap .img_box {margin-right: 10px;}
+main #sec1 .social_programs .inner .social_wrap .con_list .img_wrap .img_box:last-child {margin-right: 0;}
+
+@media screen and (max-width: 1240px) {
+  main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con a {padding: 5px 27px 5px 20px; font-size: 14px;}
+}
+
+@media screen and (max-width: 1024px) {
+  main #sec1 .social_programs {position: relative; top: 0; opacity: 1;}
+  main #sec1 .social_programs .inner .social_wrap {margin-top: 20px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list {top: 100px; margin-top: 30px; width: 100%; height: auto; border: 2px solid #f7f7f7; border-radius: 14px; overflow: hidden; opacity: 0; transition: top .66s, opacity .66s;}
+  main #sec1 .social_programs .inner .social_wrap .con_list.onMotionMob {top: 0; opacity: 1;}
+  main #sec1 .social_programs .inner .social_wrap .con_list:first-child {margin-top: 0;}
+  main #sec1 .social_programs .inner .social_wrap .con_list.onMotionMob .motion_bg {width: 0; height: 100%; transition: width 1s;}
+  main #sec1 .social_programs .inner .social_wrap .con_list.onMotionMob .motion_bg .motion_txt {opacity: 0; transition: opacity .1; transition-delay: .66s;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .content {position: relative; padding: 24px; text-align: left;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .content .title {font-size: 18px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .content .sub_title {font-size: 14px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(2n) {margin-left: 0;}
+  main #sec1 .social_programs .inner .social_wrap .con_list:nth-child(n + 3) {margin-top: 30px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con {display: flex; justify-content: flex-start; margin-top: 20px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .content .hashtag_con a {padding: 5px 35px 5px 14px; font-size: 12px;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .img_wrap {position: relative; bottom: 0; left: 0; margin-top: 20px; transform: translateX(0); display: flex; justify-content: flex-start;}
+  main #sec1 .social_programs .inner .social_wrap .con_list .img_wrap img {width: 40px;}
+  footer {width: 100%; height: 300px;}
+}
+
